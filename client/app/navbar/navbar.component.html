@@ -1,0 +1,81 @@
+<nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+    <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+    <a class="navbar-brand" routerLink='/' routerLinkActive='active' style="margin: 0px;">
+        <!--i class="fa fa-comments-o" aria-hidden="true" style="color:#1DE9B6;font-size: 25px;font-weight:300;"></i-->
+        <img src="./assets/svg/speech-bubble.svg" /> <span style="color:#686b74;font-size: 18px; margin: 0px 0px 0px 10px;">simply</span><span style="color:#b5b8bd;font-size: 18px;">social</span>
+        <!--img src="./assets/logo.png" style="height:7%; width:60%;" alt="LOGO" /-->
+    </a>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+        </ul>
+        <!-- Button trigger modal -->
+        <a data-toggle="modal" href="#myModal" style="outline: none; margin:8px 15px 0px 10px;">
+            <i class="fa fa-comment-o" aria-hidden="true" style="color:#1DE9B6;font-size: 30px;"></i>
+            <!--img src="./assets/modal-button.png" style="height:40px; width:40px;margin:5px 10px 0px 0px;" alt="Button" /-->
+        </a>
+        <!-- Modal -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header" style="border:none;">
+                        <p class="modal-title" id="modalTitle" style="margin-left: 12px; color: #808080; height: 25px; font-size: 18px; font-weight: 2px;">Create new message</p>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                    </div>
+                    <div class="modal-body">
+                        <form novalidate [formGroup]="newUserPosts">
+                            <div class="row justify-content-center">
+                                <div class="col-11">
+                                    <div class="form-group">
+                                        <div class="input-group">
+                                            <textarea class="form-control" formControlName="text" autofocus id="textArea"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <button type="button" class="btn add-media" style="margin-left: 12px; color: #A9A9A9; font-size: 14px;">
+                                                    <i class=" fa fa-camera" aria-hidden="true "></i> &nbsp;&nbsp;Add Photo
+                                                </button>
+                                </div>
+                                <div class="col-3">
+                                    <button type="button" class="btn add-media" style="color: #A9A9A9; font-size: 14px;">
+                                                <i class="fa fa-video-camera " aria-hidden="true"></i> &nbsp;&nbsp;Add Video
+                                            </button>
+                                </div>
+                                <div class="col-6" style=" color:#01B286;">
+                                    <button type="submit" style="margin-right: 28px; width: 75px;" class="btn post" (click)="onSubmit(newUserPosts);" data-dismiss="modal">Post</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <form class="form-inline my-2 my-lg-0">
+            <div id="input_container">
+                <input type="text" id="input" class="bg-inverse">
+                <img src="./assets/images/search.jpg" id="input_img">
+            </div>
+        </form>
+        <div class="dropdown">
+            <a class="btn btn-secondary dropdown-toggle" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                <img src="./assets/arun.jpg" alt="Profile" />
+            </a>
+            <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
+                <a class="dropdown-item" routerLink='/profile'>Profile</a>
+                <hr style="margin:0px; padding:0px;" />
+                <a class="dropdown-item" routerLink='/following'>Following</a>
+                <hr style="margin:0px; padding:0px;" />
+                <a class="dropdown-item" routerLink='/followers'>Followers</a>
+                <hr style="margin:0px; padding:0px;" />
+                <a class="dropdown-item" routerLink='/settings'>Settings</a>
+            </div>
+        </div>
+    </div>
+</nav>
